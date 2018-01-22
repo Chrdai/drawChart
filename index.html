@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>画图表</title>
+	<script type="text/javascript" src="js/jquery-2.2.3.js"></script>
+	<script type="text/javascript" src="js/myCharts.js"></script>
+	<style>
+		.myCharts table{
+			width:100%;
+		}
+		.chart_body{
+			background:url(images/grid.png) 0 0 repeat;
+		}
+		.chart_body td{
+			vertical-align:bottom;
+		}
+		.chart_body table td div{
+			width:30px;
+			margin:0 auto;
+			text-align:center;
+			-webkit-box-shadow:5px 2px 6px #333;
+			-moz-box-shadow:5px 2px 6px #333;
+			-khtml-border-radius:5px;
+			-webkit-border-radius:5px;
+			border-radius:5px;
+		}
+		.chart_body table td div span{
+			position:relative;
+			top:-20px;
+		}
+		.myCharts .chart_head{
+			height:50px;
+		}
+	</style>
+</head>
+<body>
+	<div style="width:500px;height:400px">
+		<div class="myCharts">
+			<div class="chart_head"></div>
+			<div class="chart_body"></div>
+		</div>
+	</div>
+	<table id="colorTips">
+		<tr>
+			<td><div></div></td><td align="left"><span>数据1</span></td>
+			<td><div></div></td><td align="left"><span>数据2</span></td>
+			<td><div></div></td><td align="left"><span>数据3</span></td>
+			<td><div></div></td><td align="left"><span>数据4</span></td>
+			<td><div></div></td><td align="left"><span>数据5</span></td>
+		</tr>
+	</table>
+	
+	<script>
+		$(document).ready(function(){
+			var chart = new myCharts([1,2,3,4,5],1);
+			var data1 = 10;
+			var data2 = 3;
+			var data3 = 2;
+			var data4 = 1;
+			var data5 = 4;
+			var arrData = [data1,data2,data3,data4,data5];
+			chart.drawLine(arrData);
+		})
+	</script>
+
+</body>
+</html>
